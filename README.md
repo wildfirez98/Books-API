@@ -17,7 +17,15 @@ Setting up the Books API Project Checklist:
 - Create 'books.js' in 'models' folder and setup a Schema with Mongoose to our Mongo database
 - Setup our controller file named 'books.js'
 - Setup routes
-    - (Insert routes table here)
+
+     | Method |       Path                   |                    Purpose                         |        Status       |
+     | ------ | ---------------------------- | ---------------------------------------------------| ------------------- |
+     | GET    |     /                        |	Home page  (created in index.js entry point)      |         DONE        |
+     | GET    |     /books                   |	Books index page                                  |         DONE        |
+     | PUT    |     /books/:id               |	Update a specific book                            |         DONE        |   
+     | DELETE |     /books/:id               |	Delete a specific book                            |         DONE        |
+     | POST   |     /books                   |	Create a new book                                 |         DONE        |
+
 - Test routes with Postman
 - Implement CORS:
     - https://www.npmjs.com/package/cors
