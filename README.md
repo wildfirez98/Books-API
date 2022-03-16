@@ -10,3 +10,7 @@ Setting up the Books API Project Checklist:
     - 'npm init -y' to create package.json file with defaults
     - 'npm install express' to make our project an Express framework application
     - 'npm i dotenv' so our project uses the .env file
+    - 'npm install mongoose' so our project uses can connect with MongoDB
+- Setup basic Express server in index.js
+    - (Insert index.js basic code here) 
+- Setup Mongo in .env file

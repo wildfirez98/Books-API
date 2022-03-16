@@ -1,9 +1,14 @@
 /////////////////////
 //Modules and Globals
 /////////////////////
+
 require('dotenv').config() // Initiate .env file for environment variables
 const express = require('express') // Instantiate express
 const app = express() // Assign express constructor to a variable
+const mongoose = require('mongoose') // Assign Mongoose ODM to a variable
+mongoose.connect(process.env.MONGO_URI, {useNewUrlParser: true, useUnifiedTopology: true}, //Instantiate Mongoose to connect with MongoDB
+    () => { console.log('Connected to MongoDB: ', process.env.MONGO_URI) }
+  )
 
 ///////////////////
 // Express Settings
