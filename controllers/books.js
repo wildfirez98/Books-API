@@ -40,10 +40,10 @@ const Book = require('../models/books.js')
 //})
 
 // GET - Index Route
-books.get('/', (req, res) => {
+books.get('/', (req, res, next) => {
     Book.find()
     .then((foundBooks) => {
-        res.json({ foundBooks })
+        res.json({ foundBooks, msg: 'This is CORS-enabled for all origins!'})
     })
     .catch(err => {
         console.log(err)
@@ -52,10 +52,10 @@ books.get('/', (req, res) => {
 })
 
 // GET - Individual Book endpoint route
-books.get('/:id', (req, res) => {
+books.get('/:id', (req, res, next) => {
     Book.findById(req.params.id)
     .then((foundBook) => {
-        res.json({ foundBook })
+        res.json({ foundBook, msg: 'This is CORS-enabled for all origins!'})
     })
     .catch(err => {
         console.log(err)
@@ -64,7 +64,7 @@ books.get('/:id', (req, res) => {
 })
 
 // PUT - Update a specific book route
-books.put('/:id', (req, res) => {
+books.put('/:id', (req, res, next) => {
     Book.findByIdAndUpdate(req.params.id, req.body)
     .then(() => {
         res.json(`/books/${req.params.id}`)
@@ -76,7 +76,7 @@ books.put('/:id', (req, res) => {
 
 
 // DELETE - Destroy a specific book route :)
-books.delete('/:id', (req, res) => {
+books.delete('/:id', (req, res, next) => {
     Book.findByIdAndDelete(req.params.id)
     .then(() => {
         res.json(`${req.params.id} successfully deleted`)
@@ -87,7 +87,7 @@ books.delete('/:id', (req, res) => {
 })
 
 // POST - Create the book route
-books.post('/', (req, res) => {
+books.post('/', (req, res, next) => {
     Book.create(req.body)
     .then(() => {
         console.log(req.body)
