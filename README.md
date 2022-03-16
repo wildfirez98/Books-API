@@ -14,3 +14,5 @@ Setting up the Books API Project Checklist:
 - Setup basic Express server in index.js
     - (Insert index.js basic code here) 
 - Setup Mongo in .env file
+- Create 'books.js' in 'models' folder and setup a Schema with Mongoose to our Mongo database
+

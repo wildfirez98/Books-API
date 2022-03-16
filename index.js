@@ -21,6 +21,10 @@ app.use(express.json())
 // Controllers and Routes Settings
 //////////////////////////////////
 
+// Books Controller Setup
+const booksController = require('./controllers/books.js') // Assign the 'books.js' controller file to a variable so we can call it
+app.use('/books', booksController) // Anytime someone goes to the /books endpoint use our books controller file
+
 // GET Endpoint for '/' or homepage
 app.get('/', (req, res) => {
     res.send('Welcome to the Books API!')
